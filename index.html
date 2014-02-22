@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="js/jalali.js"></script>
+    <script src="js/highcharts-jalali-date.js"></script>
+</head>
+<body>
+
+</body>
+<div id="container" style="height: 300px; margin-top: 2em"></div>
+<script type="text/javascript">
+
+    Highcharts.setOptions({
+        locale: getPersianLocal()
+    });
+
+    var chart = new Highcharts.Chart({
+        locale1: getPersianLocal(),
+        chart: {
+            renderTo: 'container'
+        },
+
+        title: {
+            text: 'Categorized chart'
+        },
+        tooltip: {
+            formatter: function () {
+                return Highcharts.localizationDateFormat('%A, %d %b %y, %H:%M:%S', new Date().getTime());
+            }
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+
+        series: [
+            {
+                data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+            }
+        ]
+
+    });
+</script>
+
+</html>
