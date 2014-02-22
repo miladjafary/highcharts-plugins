@@ -1,5 +1,10 @@
-﻿function getPersianLocal() {
-    // Define Farsi Lcalization date Object
+﻿/**
+ * HighCharts Localization plugin
+ * @author Milad Jafary (milad.jafary@gmail.com)
+ */
+
+
+function getPersianLocal() {
     var PersianLocalizationDate = {
         /**
          * Get a timestamp and return jalali date.
@@ -11,10 +16,10 @@
             return {
                 date: date,
                 hours: date.getHours(),
-                day: date.getJalaliUTCDay(),
-                dayOfMonth: date.getJalaliUTCDate(),
-                month: date.getJalaliUTCMonth(),
-                fullYear: date.getJalaliUTCFullYear()
+                day: date.getJalaliDay(),
+                dayOfMonth: date.getJalaliDate(),
+                month: date.getJalaliMonth(),
+                fullYear: date.getJalaliFullYear()
             };
         }
     };
@@ -31,10 +36,10 @@
         date: PersianLocalizationDate,
         i18n: {
             weekdays: ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'],
-            months: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریرور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+            months: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
         }
     };
-};
+}
 
 (function (Highcharts) {
 
@@ -75,11 +80,6 @@
             }
         },
 
-        /**
-         * Pad a string to a given length by adding 0 to the beginning
-         * @param {Number} number
-         * @param {Number} length
-         */
         pad: function (number, length) {
             // Create an array of the remaining length +1 and join it with 0's
             return new Array((length || 2) + 1 - String(number).length).join(0) + number;
@@ -140,9 +140,6 @@
                 'd': this.pad(dayOfMonth), // Two digit day of the month, 01 to 31
                 'e': dayOfMonth, // Day of the month, 1 through 31
 
-                // Week (none implemented)
-                //'W': weekNumber(),
-
                 // Month
                 'b': this.getMonthName(month, lang).substr(0, 3), // Short month, like 'Jan'
                 'B': this.getMonthName(month, lang), // Long month, like 'January'
@@ -162,7 +159,6 @@
                 'S': this.pad(date.getSeconds()), // Two digits seconds, 00 through  59
                 'L': this.pad(Math.round(timestamp % 1000), 3) // Milliseconds (naming from Ruby)
             };
-
 
             // do the replaces
             for (key in replacements) {
@@ -185,7 +181,19 @@
         return LocalizationDate.dateFormat(format, timestamp, capitalize, Locale);
     };
 
-}(Highcharts));
+    Highcharts.localizationNumber = function(number){
+        if (!LocalizationDate.defined(Highcharts.getOptions().locale)) {
+            return number;
+        }
 
+        return number.toString().replace(/\d+/g, function (digit) {
+            var ret = '';
+            for (var i = 0, len = digit.length; i < len; i++) {
+                ret += String.fromCharCode(digit.charCodeAt(i) + 1728);
+            }
+            return ret;
+        });
+    }
+}(Highcharts));
 
 
