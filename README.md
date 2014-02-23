@@ -1,59 +1,67 @@
-Highcharts Localization plugin.
+#<3>Highcharts Localization plugin.</h3>
 This plugin used for localization Highcharts date and number and also could be extend as you need.
 
-<h1>Installation</h1>
+#<h3>Installation</h3>
 Installing this plugin is simple. just import Highchart plugin and jQuery as core modules and then first
-import <code>jalai.js</code> then import <code>highcharts-localization.js</code>
+import <code>jalai.js</code> then import <code>highcharts-localization.js</code> 
 
-<code>
+```javascript
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="js/jalali.js"></script>
     <script src="js/highcharts-localization.js"></script>
-</code>
+```
+
 
 By default persian date and number are include in <code>highcarts-localization.js</code>.for add new localization you should
 below following steps:
-1- Create a json config object for converting Gregorian timestamp to your local date(e.g : Persian date).
-<strong>Important notes</strong></br>
-    You need a function that called <code>getDate</code> that accept timestamp parameter and return following parameters
+
+1. Create a json config object for converting Gregorian timestamp to your local date(e.g : Persian date).
+
+    <strong>Important notes</strong>
+
+    - You need a function that called <code>getDate</code> that accept timestamp parameter and return following parameters
     as a json config object :
-    <code>
-        return {
-            date: date,
-            hours: date.getHours(),
-            day: date.getJalaliDay(),
-            dayOfMonth: date.getJalaliDate(),
-            month: date.getJalaliMonth(),
-            fullYear: date.getJalaliFullYear()
-        };
-    </code>
-    </br><strong>Example : </strong></br>
-    <code>
-        var PersianLocalizationDate = {
-            /**
-             * Get a timestamp and return jalali date.
-             * @param timestamp
-             * @returns {{date: Date, hours: number, day: *, dayOfMonth: *, month: *, fullYear: *}}
-             */
-            getDate: function (timestamp) {
-                var date = new Date(timestamp);
-                return {
-                    date: date,
-                    hours: date.getHours(),
-                    day: date.getJalaliDay(),
-                    dayOfMonth: date.getJalaliDate(),
-                    month: date.getJalaliMonth(),
-                    fullYear: date.getJalaliFullYear()
-                };
-            }
-        };
-    </code>
-</br>
-2- Create following javascript config object and assign your localization json date converter
+    
+    
+```javascript
+    return {
+        date: date,
+        hours: date.getHours(),
+        day: date.getJalaliDay(),
+        dayOfMonth: date.getJalaliDate(),
+        month: date.getJalaliMonth(),
+        fullYear: date.getJalaliFullYear()
+    };
+        
+```
+<strong>Example : </strong> 
+```javascript
+    var PersianLocalizationDate = {
+        /**
+         * Get a timestamp and return jalali date.
+         * @param timestamp
+         * @returns {{date: Date, hours: number, day: *, dayOfMonth: *, month: *, fullYear: *}}
+         */
+        getDate: function (timestamp) {
+            var date = new Date(timestamp);
+            return {
+                date: date,
+                hours: date.getHours(),
+                day: date.getJalaliDay(),
+                dayOfMonth: date.getJalaliDate(),
+                month: date.getJalaliMonth(),
+                fullYear: date.getJalaliFullYear()
+            };
+        }
+    };
+```
+
+2. Create following javascript config object and assign your localization json date converter
     (in our example <code>PersianLocalizationDate</code>) to date parameter.
-</br><strong>Example : </strong></br>
-<code>
+
+<strong>Example : </strong>
+```javascript
     return {
          /**
           * @type {String} , An ISO 639-1 language code(e.g :fa)
@@ -69,12 +77,13 @@ below following steps:
              months: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
          }
     };
-</code>
+    
+```
+3. Finally set <code>locale</code> option to Highcharts global options by <code>Highcharts.setOptions()</code>.
 
-3- Finally set <code>locale</code> option to Highcharts global options by <code>Highcharts.setOptions()</code>.
-</br><strong>Final Example :</strong></br>
-<code>
-    var PersianLocalizationDate = {
+<strong>Final Example :</strong>
+```javascript
+    var **PersianLocalizationDate** = {
         /**
          * Get a timestamp and return jalali date.
          * @param timestamp
@@ -103,16 +112,15 @@ below following steps:
              * @type {String} , An ISO 3166-1 language code
              */
             country: 'IR',
-            date: PersianLocalizationDate,
+            date: **PersianLocalizationDate**,
             i18n: {
                 weekdays: ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'],
                 months: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
             }
         }
     });
-</code>
-
-4- Know you can use blow functions for localization date and number :
+```
+4. Know you can use blow functions for localization date and number :
     <ul>
         <li>
             <code>Highcharts.localizationDateFormat(dateFormat, timestamp) </code> :
