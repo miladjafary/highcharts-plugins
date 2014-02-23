@@ -15,8 +15,8 @@ import <code>jalai.js</code> then import <code>highcharts-localization.js</code>
 By default persian date and number are include in <code>highcarts-localization.js</code>.for add new localization you should
 below following steps:
 1- Create a json config object for converting Gregorian timestamp to your local date(e.g : Persian date).
-<strong>Important notes</strong>
-    You need a function that called <code>getDate<code> that accept timestamp parameter and return following parameters
+<strong>Important notes</strong></br>
+    You need a function that called <code>getDate</code> that accept timestamp parameter and return following parameters
     as a json config object :
     <code>
         return {
@@ -28,7 +28,7 @@ below following steps:
             fullYear: date.getJalaliFullYear()
         };
     </code>
-    E.g :
+    </br><strong>Example : </strong></br>
     <code>
         var PersianLocalizationDate = {
             /**
@@ -49,10 +49,10 @@ below following steps:
             }
         };
     </code>
-
+</br>
 2- Create following javascript config object and assign your localization json date converter
     (in our example <code>PersianLocalizationDate</code>) to date parameter.
-E.g :
+</br><strong>Example : </strong></br>
 <code>
     return {
          /**
@@ -72,7 +72,7 @@ E.g :
 </code>
 
 3- Finally set <code>locale</code> option to Highcharts global options by <code>Highcharts.setOptions()</code>.
-Complete example :
+</br><strong>Final Example :</strong></br>
 <code>
     var PersianLocalizationDate = {
         /**
@@ -115,16 +115,16 @@ Complete example :
 4- Know you can use blow functions for localization date and number :
     <ul>
         <li>
-            <code>Highcharts.localizationDateFormat(dateFormat, timestamp) <code> :
+            <code>Highcharts.localizationDateFormat(dateFormat, timestamp) </code> :
             <div>Convert Gregorian date to your localization date, for example jalali date</div>
         </li>
         <li>
-            <code>Highcharts.localizationNumber (number) <code> :
+            <code>Highcharts.localizationNumber (number) </code> :
             <div>Convert english number to persian and arabic number</div>
         </li>
     </ul>
 
-<h1><a href="http://jsfiddle.net/KjsY2/">See online example</a></h1>
+<h3><a href="http://jsfiddle.net/KjsY2/">See online example</a></h3>
 
 Enjoy Highcharts localization.
 Please contact me if there is any problem
