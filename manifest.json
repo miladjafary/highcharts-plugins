@@ -13,7 +13,7 @@
         }
     ],
     "dependencies": {
-        "highcharts": "",
+        "highcharts": ">=2.3.0",
         "jalaliJSCalendar":"http://farhadi.ir/"
     },
     "description": "Localization Highcharts date and number.",
