@@ -1,8 +1,12 @@
 ﻿/**
- * HighCharts Localization plugin
+ * Highcharts Localization plugin.
+ * This plugin used for localization Highcharts date and number and also could be extend as you need.
+ *
+ *
+ * @License GPLv3
+ * @version 1.0
  * @author Milad Jafary (milad.jafary@gmail.com)
  */
-
 
 function getPersianLocal() {
     var PersianLocalizationDate = {

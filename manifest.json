@@ -1,0 +1,38 @@
+{
+    "name": "Highcharts Localization",
+    "version": "1.0",
+    "title": "Highcharts Localization",
+    "author": {
+        "name": "Milad Jafary",
+        "url": "https://github.com/miladjafary"
+    },
+    "licenses": [
+        {
+            "type": "GPLv3",
+            "url": "https://www.gnu.org/licenses/quick-guide-gplv3.html"
+        }
+    ],
+    "dependencies": {
+        "highcharts": "",
+        "jalaliJSCalendar":"http://farhadi.ir/"
+    },
+    "description": "Localization Highcharts date and number.",
+    "keywords": [
+        "localization",
+        "jalali date"
+    ],
+    "homepage": "https://github.com/miladjafary/highcharts-plugins",
+    "docs": "",
+    "bugs": "",
+    "download": "https://codeload.github.com/miladjafary/highcharts-plugins/zip/master",
+    "demo": [
+        "http://jsfiddle.net/KjsY2/"
+    ],
+    "maintainers": [
+        {
+            "name": "Milad Jafary",
+            "email": "milad.jafary@gmail.com",
+            "url": "https://github.com/miladjafary/highcharts-plugins"
+        }
+    ]
+}

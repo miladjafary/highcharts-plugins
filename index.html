@@ -18,7 +18,6 @@
     });
 
     var chart = new Highcharts.Chart({
-        locale1: getPersianLocal(),
         chart: {
             renderTo: 'container'
         },
@@ -28,7 +27,8 @@
         },
         tooltip: {
             formatter: function () {
-                return Highcharts.localizationDateFormat('%A, %d %b %y, %H:%M:%S', new Date().getTime());
+                var date = Highcharts.localizationDateFormat('%A, %d %B %y, %H:%M:%S', new Date().getTime());
+                return Highcharts.localizationNumber(date);
             }
         },
         xAxis: {
