@@ -16,7 +16,7 @@ import <code>jalai.js</code> then import <code>highcharts-localization.js</code>
 By default persian date and number are include in <code>highcarts-localization.js</code>.for add new localization you should
 below following steps:
 
-1. Create a json config object for converting Gregorian timestamp to your local date(e.g : Persian date).
+- Create a json config object for converting Gregorian timestamp to your local date(e.g : Persian date).
 
     <strong>Important notes</strong>
 
@@ -57,7 +57,7 @@ below following steps:
     };
 ```
 
-2. Create following javascript config object and assign your localization json date converter
+- Create following javascript config object and assign your localization json date converter
     (in our example <code>PersianLocalizationDate</code>) to date parameter.
 
 <strong>Example : </strong>
@@ -79,11 +79,11 @@ below following steps:
     };
     
 ```
-3. Finally set <code>locale</code> option to Highcharts global options by <code>Highcharts.setOptions()</code>.
+- Finally set <code>locale</code> option to Highcharts global options by <code>Highcharts.setOptions()</code>.
 
 <strong>Final Example :</strong>
 ```javascript
-    var **PersianLocalizationDate** = {
+    var PersianLocalizationDate = {
         /**
          * Get a timestamp and return jalali date.
          * @param timestamp
@@ -112,7 +112,7 @@ below following steps:
              * @type {String} , An ISO 3166-1 language code
              */
             country: 'IR',
-            date: **PersianLocalizationDate**,
+            date: PersianLocalizationDate,
             i18n: {
                 weekdays: ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'],
                 months: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
@@ -120,7 +120,7 @@ below following steps:
         }
     });
 ```
-4. Know you can use blow functions for localization date and number :
+- Know you can use blow functions for localization date and number :
     <ul>
         <li>
             <code>Highcharts.localizationDateFormat(dateFormat, timestamp) </code> :
