@@ -9,7 +9,7 @@
     "licenses": [
         {
             "type": "GPLv3",
-            "url": "https://www.gnu.org/licenses/quick-guide-gplv3.html"
+            "url": "https://github.com/miladjafary/highcharts-plugins/blob/master/LICENSE"
         }
     ],
     "dependencies": {
