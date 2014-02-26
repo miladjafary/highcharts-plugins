@@ -1,6 +1,6 @@
 {
     "name": "Highcharts Localization",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "title": "Highcharts Localization",
     "author": {
         "name": "Milad Jafary",
@@ -13,8 +13,7 @@
         }
     ],
     "dependencies": {
-        "highcharts": ">=2.3.0",
-        "jalaliJSCalendar":"http://farhadi.ir/"
+        "highcharts": ">=2.3.0"
     },
     "description": "Localization Highcharts date and number.",
     "keywords": [
@@ -22,7 +21,6 @@
         "jalali date"
     ],
     "homepage": "https://github.com/miladjafary/highcharts-plugins",
-    "download": "https://codeload.github.com/miladjafary/highcharts-plugins/zip/master",
     "demo": [
         "http://jsfiddle.net/KjsY2/"
     ],
