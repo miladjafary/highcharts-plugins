@@ -12,7 +12,6 @@
         }
     ],
     "dependencies": {
-        "highcharts": ">=2.3.0",
-        "jalaliJSCalendar":"http://farhadi.ir/"
+        "highcharts": ">=2.3.0"
     }
 }
