@@ -15,20 +15,5 @@
     "dependencies": {
         "highcharts": ">=2.3.0"
     },
-    "description": "Localization Highcharts date and number.",
-    "keywords": [
-        "localization",
-        "jalali date"
-    ],
-    "homepage": "https://github.com/miladjafary/highcharts-plugins",
-    "demo": [
-        "http://jsfiddle.net/KjsY2/"
-    ],
-    "maintainers": [
-        {
-            "name": "Milad Jafary",
-            "email": "milad.jafary@gmail.com",
-            "url": "https://github.com/miladjafary/highcharts-plugins"
-        }
-    ]
+    "description": "Localization Highcharts date and number."
 }
