@@ -13,6 +13,24 @@
         }
     ],
     "dependencies": {
-        "highcharts": ">=2.3.0"
-    }
+        "highcharts": ">=2.3.0",
+        "jalaliJSCalendar":"http://farhadi.ir/"
+    },
+    "description": "Localization Highcharts date and number.",
+    "keywords": [
+        "localization",
+        "jalali date"
+    ],
+    "homepage": "https://github.com/miladjafary/highcharts-plugins",
+    "download": "https://codeload.github.com/miladjafary/highcharts-plugins/zip/master",
+    "demo": [
+        "http://jsfiddle.net/KjsY2/"
+    ],
+    "maintainers": [
+        {
+            "name": "Milad Jafary",
+            "email": "milad.jafary@gmail.com",
+            "url": "https://github.com/miladjafary/highcharts-plugins"
+        }
+    ]
 }
