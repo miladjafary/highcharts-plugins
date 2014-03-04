@@ -132,7 +132,9 @@ below following steps:
         </li>
     </ul>
 
-<h3><a href="http://jsfiddle.net/KjsY2/">See online example</a></h3>
+<h3>See online example</a></h3>
+- <a href="http://jsfiddle.net/KjsY2/">Basic Example</a>
+- <a href="http://jsfiddle.net/SQwGT/2/">Time Series and zoomable</a>
 
 Enjoy Highcharts localization.
 Please contact me if there is any problem
